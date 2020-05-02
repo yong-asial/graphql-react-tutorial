@@ -14,8 +14,9 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true
 }));
 
-console.log('Connecting to mongodb');
-mongoose.connect('mongodb+srv://admin:admin@cluster0-1sk1o.gcp.mongodb.net/test?retryWrites=true&w=majority', {
+const MONGO_HOST = 'mongodb://root:example@0.0.0.0';
+console.log(`Connecting to mongodb: ${MONGO_HOST}`);
+mongoose.connect(MONGO_HOST, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

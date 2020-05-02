@@ -10,6 +10,7 @@ class AuthorList extends Component {
       return (<div>Loading Authors...</div>)
     } else {
       // loading is complete
+      if (!data || !data.authors || !data.authors.length) return (<div>No authors registered in the database.</div>)
       return data.authors.map(author => {
         return (
           <li key={author.id}> {author.name} ({author.age}) </li>

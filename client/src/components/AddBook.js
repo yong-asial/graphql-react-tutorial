@@ -16,13 +16,14 @@ class AddBook extends Component {
 
 
   displayAuthors(){
-    var authors = this.props.getAuthorsQuery;
-    if(authors.loading){
+    var data = this.props.getAuthorsQuery;
+    if(data.loading){
         return( <option disabled>Loading authors</option> );
     } else {
-        return authors.authors.map(author => {
-            return( <option key={ author.id } value={author.id}>{ author.name }</option> );
-        });
+      if (!data || !data.authors || !data.authors.length) return;
+      return data.authors.map(author => {
+          return( <option key={ author.id } value={author.id}>{ author.name }</option> );
+      });
     }
   }
 

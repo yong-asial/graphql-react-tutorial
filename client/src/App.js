@@ -4,7 +4,6 @@ import { ApolloProvider } from 'react-apollo';
 
 // components
 import BookList from './components/BookList';
-import AuthorList from './components/AuthorList';
 import AddBook from './components/AddBook';
 
 // apollo client setup
@@ -19,7 +18,6 @@ class App extends Component {
             <div id="main">
                 <h1>Reading List</h1>
                 <BookList />
-                {/* <AuthorList /> */}
                 <AddBook />
             </div>
         </ApolloProvider>
